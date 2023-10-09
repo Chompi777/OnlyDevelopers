@@ -5,8 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página de OnlyDevs</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.7/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* Estilo para el texto que se mostrará por 3 segundos */
+        .show-text {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(255, 255, 255, 0.9); /* Fondo semitransparente */
+        }
+    </style>
+
 </head>
 <body class="bg-gray-100">
+<!-- Texto "OnlyDevs" visible por 3 segundos -->
+<div class="show-text">
+    OnlyDevs
+</div>
+<!-- Navbar -->
+<nav class="bg-blue-700 p-4">
+    <div class="container mx-auto flex justify-between items-center">
+        <!-- Logo -->
+        <a href="/" class="text-white text-xl font-bold">OnlyDevs</a>
+        
+        <!-- Menú de navegación -->
+        <ul class="flex space-x-4">
+            <li><a href="/WEB/servicios.php">Servicios</a></li>
+            <li><a href="/WEB/staff.php">Quiénes Somos</a></li>
+            <li><a href="/cuenta">Cuenta</a></li>
+        </ul>
+    </div>
+</nav>
 
 <div class="flex">
     <div class="w-1/2 h-screen flex flex-col items-center justify-center bg-blue-500 text-white">
@@ -32,7 +68,7 @@
             </form>
 
              <!-- Botón de Registrarse -->
-             <button onclick="window.location.href='registro.html'" class="w-full mt-4 bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 focus:outline-none focus:ring focus:border-green-300">Registrarse</button>
+             <button onclick="window.location.href='/WEB/registro.php'" class="w-full mt-4 bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 focus:outline-none focus:ring focus:border-green-300">Registrarse</button>
 
             <!-- Opciones de inicio de sesión con redes sociales -->
             <div class="mt-4">
@@ -67,7 +103,7 @@
         <!-- Primer post destacado -->
         <div class="flex items-center p-4 bg-white rounded-lg shadow-lg mb-4">
             <div class="w-1/4">
-                <img src="/Images/fabios.jpeg" alt="Imagen del post" class="w-full rounded-lg">
+                <img src="/IMAGES/fabios.jpeg" alt="Imagen del post" class="w-full rounded-lg">
             </div>
             <div class="w-3/4 px-4">
                 <h3 class="text-xl font-semibold">Fabios discutiendo</h3>
@@ -84,6 +120,13 @@
 <footer class="bg-blue-500 text-white text-center py-4">
     <p>&copy; 2023 OnlyDevs. Todos los derechos reservados.</p>
 </footer>
-
+<script>
+    // Función para ocultar el texto después de 3 segundos
+    setTimeout(function () {
+        var showText = document.querySelector('.show-text');
+        showText.style.display = 'none';
+    }, 2000); // 3000 milisegundos = 3 segundos
+</script>
 </body>
 </html>
+
